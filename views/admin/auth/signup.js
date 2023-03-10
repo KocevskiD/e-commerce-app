@@ -1,5 +1,6 @@
+const layout = require('../layout')
 module.exports = ({req}) => {//we provide obj becouse we dont know how many arguments we will need in the future
-    return `
+    return layout({content: `
     <div>
       Your id is: ${req.session.userId}
       <form method="POST">
@@ -9,5 +10,5 @@ module.exports = ({req}) => {//we provide obj becouse we dont know how many argu
         <button>Sign Up</button>
       </form>
     </div>
-  `
+  `})
 }
