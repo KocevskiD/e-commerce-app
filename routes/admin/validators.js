@@ -1,5 +1,5 @@
 const {check } = require('express-validator')
-const usersRepo = require('../../repositories')
+const usersRepo = require('../../repositories/users')
 
 module.exports = {
     requireEmail: check('email').trim().normalizeEmail().isEmail().withMessage('Must be a valid e-mail').custom(async (email) => {
