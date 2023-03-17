@@ -1,5 +1,6 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
+const router = express.Router();
 
 const usersRepo = require('../../repositories/users');
 const signupTemplate = require('../../views/admin/auth/signup');
@@ -11,8 +12,6 @@ const {
   requireEmailExists,
   requireValidPasswordForUser
 } = require('./validators');
-
-const router = express.Router();
 
 router.get('/signup', (req, res) => {
   res.send(signupTemplate({ req }));
